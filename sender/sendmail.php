@@ -10,20 +10,20 @@ $mail = new PHPMailer;
 // Set PHPMailer to use the sendmail transport
 $mail->isSendmail();
 //Set who the message is to be sent from
-$mail->setFrom('osbornkwame14@gmail.com', 'Python X');
+$mail->setFrom('sender@gmail.com', 'something');
 //Set an alternative reply-to address
-$mail->addReplyTo('osbornkwame14@gmail.com', 'First Last');
+$mail->addReplyTo('sender@gmail.com', 'something');
 //Set who the message is to be sent to
-$mail->addAddress('ekpenyong117@gmail.com', 'Emmanuel');
+$mail->addAddress('somebodyt@gmail.com', 'Name');
 //Set the subject line
 $mail->Subject = '';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
 //Replace the plain text body with one created manually
-$mail->AltBody = 'Welcome to Python X!';
+$mail->AltBody = 'Message';
 //Attach an image file
-$mail->addAttachment('logo.jpg');
+$mail->addAttachment('someimage.jpg');
 
 //send the message, check for errors
 if (!$mail->send()) {
